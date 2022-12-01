@@ -48,70 +48,36 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="border-b">
+                  <tr v-for="user in users" :key="user.id" class="border-b">
                     <td
                       class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
                     >
-                      1
+                      {{user.id}}
                     </td>
-                    <td
-                      class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
-                    >
-                      Mark
-                    </td>
-                    <td
-                      class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
-                    >
-                      Otto
-                    </td>
-                    <td
-                      class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
-                    >
-                      @mdo
-                    </td>
-                  </tr>
-                  <tr class="bg-white border-b">
                     <td
                       class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
                     >
-                      2
+                      {{user.username}}
                     </td>
-                    <td
-                      class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
-                    >
-                      Jacob
-                    </td>
-                    <td
-                      class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
-                    >
-                      Thornton
-                    </td>
-                    <td
-                      class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
-                    >
-                      @fat
-                    </td>
-                  </tr>
-                  <tr class="bg-white border-b">
                     <td
                       class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
                     >
-                      3
+                      {{user.gender}}
                     </td>
                     <td
-                      class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                      class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
                     >
-                      Larry
+                      {{user.fingerprint_id}}
                     </td>
                     <td
-                      class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                      class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
                     >
-                      Wild
+                      {{user.user_date}}
                     </td>
                     <td
-                      class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                      class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
                     >
-                      @twitter
+                      {{user.time_in}}
                     </td>
                   </tr>
                 </tbody>
@@ -124,4 +90,20 @@
   </main>
 </template>
 
-<script setup></script>
+<script setup>
+import { reactive, ref } from "@vue/reactivity";
+import { APIURL } from "../constants";
+
+const users = ref([]);
+
+const getUsers = async () => {
+  const response = await fetch(`${APIURL}/get_users.php`)
+  const data = await response.json()
+  users.value = data
+  console.log(users.value)
+}
+
+getUsers()
+ 
+
+</script>
