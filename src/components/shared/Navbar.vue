@@ -18,21 +18,21 @@
             <router-link
               class="nav-link text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-gray-500 hover:text-gray-800"
               to="/"
-              >Home</router-link
+              >User</router-link
             >
           </li>
           <li class="nav-item pr-2">
             <router-link
               class="nav-link text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-gray-500 hover:text-gray-800"
               to="/"
-              >Home</router-link
+              >User Logs</router-link
             >
           </li>
           <li class="nav-item pr-2">
             <router-link
               class="nav-link text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-gray-500 hover:text-gray-800"
               to="/"
-              >Home</router-link
+              >Manage User</router-link
             >
           </li>
         </ul>
