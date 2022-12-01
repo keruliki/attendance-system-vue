@@ -92,6 +92,7 @@
 
 <script setup>
 import { reactive, ref } from "@vue/reactivity";
+import { onMounted } from "vue";
 import { APIURL } from "../constants";
 
 const users = ref([]);
@@ -103,7 +104,7 @@ const getUsers = async () => {
   console.log(users.value)
 }
 
-getUsers()
+onMounted(getUsers)
  
 
 </script>
