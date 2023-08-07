@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import AboutView from '../views/AboutView.vue'
+import ManageUserView from '../views/ManageUserView.vue'
 import UserLogView from '../views/UserLogView.vue'
 
 const router = createRouter({
@@ -15,6 +15,11 @@ const router = createRouter({
       path: '/user-logs',
       name: 'user-logs',
       component: UserLogView
+    },
+    {
+      path: '/manage-users',
+      name: 'manage-users',
+      component: ManageUserView
     }
   ]
 })

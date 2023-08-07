@@ -31,7 +31,7 @@
           <li class="nav-item pr-2">
             <router-link
               class="nav-link text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-gray-500 hover:text-gray-800"
-              to="/"
+              to="/manage-users"
               >Manage User</router-link
             >
           </li>
